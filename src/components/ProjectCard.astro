@@ -1,0 +1,82 @@
+---
+const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+---
+
+<div class="project-card">
+  <a href={url} target={target}>
+    <div class="card-div">
+      {
+        img && (
+          <Image
+            src={img}
+            width={750}
+            height={422}
+            format="webp"
+            alt={title}
+            class="image"
+          />
+        )
+      }
+      <div class="text-div">
+        <h1>
+          {title}
+          {badge && <div class="badge">{badge}</div>}
+        </h1>
+        <p>{desc}</p>
+        <div class="actions">
+          {
+            tags &&
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+.project-card {
+}
+
+.card-div {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 20px;
+}
+
+.text-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-div h1 {
+  font-size: 14pt;
+}
+
+.text-div p {
+  font-size: 12pt;
+  margin-bottom: 30px;
+}
+
+.badge {
+  badge-secondary;
+}
+
+</style>

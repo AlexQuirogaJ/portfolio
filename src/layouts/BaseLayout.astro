@@ -1,0 +1,102 @@
+---
+// import Header from "../components/Header.astro";
+// import Footer from "../components/Footer.astro";
+import SideBar from "../components/SideBar.astro";
+import Footer from "../components/Footer.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  includeSidebar?: boolean;
+  sideBarActiveItemID?: string;
+}
+
+const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="main-layout">
+      <div class="sidebar">
+        {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+      </div>
+      <div class="main-page">
+        <div class="main-content">
+          <main>
+            <slot />
+          </main>
+        </div>
+        <div class="footer">
+          <footer>
+            <Footer />
+          </footer>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */ */
+    font-family: system-ui;
+    text-decoration: none;
+}
+
+body {
+    background-color: #191c1e;
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: #191c1e;
+  color: #ede8e6;
+  position: fixed;
+}
+
+.main-page {
+    flex-grow: auto;
+    margin: 40px 0 0 300px;
+    width: 100%;
+    height: 100vh;
+    padding: 0 40px;
+    /* overflow-y: scroll; */
+    background-color: #1d2023;
+}
+
+.main-content {
+  padding-top: 40px; 40px;
+  font-family: system-ui;
+  color: #ede8e6;
+  font-size: 14pt;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 100px;
+}
+
+</style>

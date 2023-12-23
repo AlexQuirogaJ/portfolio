@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EducationCard from "../components/EducationCard.astro"; 
+import ExperienceCard from "../components/ExperienceCard.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import CV from "../components/CV.astro";
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="page">
+    <div class="title">Alex Quiroga</div>
+    <div class="subtitle">Aerospace Technical Engineer</div>
+    <div class="resume">
+      <text>
+        Aeronautical engineering <strong>master's student</strong> at the Technical University
+        of Madrid. Have obtained <strong>code development experience</strong> in future technologies
+        by mean of an internship and personal projects. Currently looking for further
+        deepening in <strong>data science</strong> applied to <strong>control systems</strong>.
+      </text>
+    </div>
+
+  </div>
+
+  <div class="education" id="education">
+    <div class="title">
+      <h1> Education</h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="currentColor" d="M15.09 12.79a1 1 0 0 0-.086-1.638L15 5.33L14 6v5.15a1.001 1.001 0 0 0-.092 1.629l-.378.502a2.48 2.48 0 0 0-.53 1.498v1.222h.815a.88.88 0 0 0 .853-.664l.331-1.336v2h1v-1.21a2.486 2.486 0 0 0-.534-1.505zM8 0L0 4l8 5l8-5z"/><path fill="currentColor" d="M8 10L3 6.67v1.71C3 9.29 5.94 12 8 12s5-2.71 5-3.62V6.67z"/></svg>
+    </div>
+    <EducationCard
+      date="2022 - Today"
+      title="Master’s degree in Aeronautical Engineering"
+      institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
+      description="Aircraft Specialization"
+    />
+
+    <EducationCard
+      date="2017 - 2023"
+      title="Bachelor’s degree in Aerospace Engineering"
+      institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
+      description="Aerospace Sciences and Technologies"
+    />
+
+  </div>
+
+  <div class="experience" id="experience">
+    <div class="title">
+      <h1> Work Experience</h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10 2h4a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8c0-1.11.89-2 2-2h4V4c0-1.11.89-2 2-2m4 4V4h-4v2z"/></svg>
+    </div>
+    
+    <ExperienceCard
+      date="Mar 2021 - Aug 2021"
+      title="Intership"
+      company="SRM Consulting"
+      description="Part of the development team in charge of the platform's backend. Implementation of artificial intelligence algorithms with Python for cartographic analysis and volume rendering from photographs obtained by drones."
+    />
+
+  </div>
+
+  <div class="skills" id="skills">
+    <div class="title">
+      <h1>Skills </h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H20v15q-.625 0-1.062.438T18.5 18.5q0 .625.438 1.063T20 20v2zm.5-7h2V4H8zm-.5 5h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20"/></svg>
+    </div>
+
+    <Skills />
+  </div>
+
+  <div class="projects" id="projects">
+    <div class="title">
+      <h1>Projects </h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M216 40h-80V24a8 8 0 0 0-16 0v16H40a16 16 0 0 0-16 16v120a16 16 0 0 0 16 16h39.36l-21.61 27a8 8 0 0 0 12.5 10l29.59-37h56.32l29.59 37a8 8 0 1 0 12.5-10l-21.61-27H216a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16M104 144a8 8 0 0 1-16 0v-24a8 8 0 0 1 16 0Zm32 0a8 8 0 0 1-16 0v-40a8 8 0 0 1 16 0Zm32 0a8 8 0 0 1-16 0V88a8 8 0 0 1 16 0Z"/></svg>
+    </div>
+    <Projects />
+  </div>
+
+  <div class="cv" id="cv">
+    <div class="title">
+      <h1>CV </h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.414A2 2 0 0 0 15.414 6L12 2.586A2 2 0 0 0 10.586 2zm5 6a1 1 0 1 0-2 0v3.586l-1.293-1.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 11.586z" clip-rule="evenodd"/></svg>
+    </div>
+    <CV />
+
+  </div>
+
+  <div class="contact" id="contact">
+    <div class="title">
+      <h1>Contact </h1> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20"><path fill="currentColor" d="M18 2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2zm-4.37 9.1L20 16v-2l-5.12-3.9L20 6V4l-10 8L0 4v2l5.12 4.1L0 14v2l6.37-4.9L10 14z"/></svg>
+    </div>
+    
+  </div>
+
+</BaseLayout>
+
+<style>
+
+.title {
+  font-size: 30pt;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 20pt;
+  font-weight: 400;
+}
+
+.resume {
+  font-size: 16pt;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.education .experience, .projects .skills, .cv .contact{
+  margin-top: 20px;
+}
+
+.education h1, .experience h1, .projects h1, .skills h1, .cv h1, .contact h1 {
+  font-size: 25pt;
+  font-weight: 600;
+}
+
+.education .title, .experience .title, .projects .title, .skills .title, .cv .title, .contact .title {
+  display: flex;
+  align-items: center;
+}
+
+.education .title svg, .experience .title svg, .projects .title svg, .skills .title svg, .cv .title svg, .contact .title svg {
+  margin-left: 20px;
+  height: 30px;
+  width: auto;
+}
+	
+</style>

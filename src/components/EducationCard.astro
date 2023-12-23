@@ -1,0 +1,68 @@
+---
+interface Props {
+	date: string;
+	title: string;
+	institution: string;
+    description: string;
+}
+
+const { date, title, institution, description } = Astro.props;
+---
+
+<div class="edu-card">
+<div>
+    <h1>{title}</h1>
+    <h2>{institution}</h2>
+    <h3>{description}</h3>
+
+</div>
+<div class="date">
+    <time>{date}</time>
+</div>
+
+</div>
+
+<style>
+.edu-card {
+    text-align: left;
+    border-radius: 8px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: 600;
+    margin: 0;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
+.date {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+
+}
+
+</style>

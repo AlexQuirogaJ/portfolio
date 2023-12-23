@@ -1,0 +1,40 @@
+---
+const today = new Date();
+---
+
+<footer class="footer-div">
+  <p class="developer">&copy; {today.getFullYear()} Alex Quiroga</p>
+  <p class="page-tools">Made with <a href="https://astro.build/" target="_blank">Astro Framework</a></p>
+</footer>
+
+<style>
+
+.footer-div {
+  color: white;
+  font-size: 12pt;
+  text-decoration: none;
+  font-family: system-ui;
+  margin-top: 50px;
+  padding-bottom: 40px;
+}
+
+.developer, .page-tools {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+
+.page-tools a {
+  color: white;
+  text-decoration: none;
+  font-family: system-ui;
+  font-size: 12pt;
+  font-weight: 550;
+  display: block;
+  /* display: inline-block;
+  overflow: hidden; */
+}
+
+</style>
