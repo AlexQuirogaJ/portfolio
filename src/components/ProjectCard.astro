@@ -65,4 +65,18 @@ const {post} = Astro.props;
   font-size: 12pt;
   margin-bottom: 30px;
 }
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  .card-div {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 95%;
+    height: auto;
+    order: 2;
+  }
+
+}
 </style>
