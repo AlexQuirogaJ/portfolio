@@ -3,8 +3,12 @@ const today = new Date();
 ---
 
 <footer class="footer-div">
-  <p class="developer">&copy; {today.getFullYear()} Alex Quiroga</p>
-  <p class="page-tools">Made with <a href="https://astro.build/" target="_blank">Astro Framework</a></p>
+  <div class="developer">
+    <p>&copy; {today.getFullYear()} <strong>Alex Quiroga</strong></p>
+  </div>
+  <div class="page-tools">
+    <p>Made with <a href="https://astro.build/" target="_blank">Astro Framework</a></p>
+  </div>
 </footer>
 
 <style>
@@ -16,25 +20,26 @@ const today = new Date();
   font-family: system-ui;
   margin-top: 50px;
   padding-bottom: 40px;
+
 }
 
 .developer, .page-tools {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
+  text-align: center;
+  margin-top: 8px;
 
 }
 
-.page-tools a {
+.page-tools p a {
   color: white;
   text-decoration: none;
   font-family: system-ui;
   font-size: 12pt;
   font-weight: 550;
   display: block;
-  /* display: inline-block;
-  overflow: hidden; */
+}
+
+p, strong, a {
+  display: inline !important;
 }
 
 </style>

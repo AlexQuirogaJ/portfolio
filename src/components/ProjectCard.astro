@@ -28,7 +28,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <div class="actions">
           {
             tags &&
-              tags.map((tag) => (
+              tags.map((tag:string) => (
                 <a href={`${tag_url}/${tag}`} class="badge badge-outline">
                   {tag}
                 </a>
@@ -57,7 +57,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
   border-radius: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
-  margin-left: 15px;
+  margin-left: 0px;
   margin-right: 20px;
 }
 

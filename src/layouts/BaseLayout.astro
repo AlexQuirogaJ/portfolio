@@ -1,31 +1,32 @@
 ---
-// import Header from "../components/Header.astro";
-// import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
 import Footer from "../components/Footer.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, PRIMARY_COLOR, SECONDARY_COLOR } from "../config";
+import BaseHead from "../components/BaseHead.astro";
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
-  includeSidebar?: boolean;
-  sideBarActiveItemID?: string;
+  includeSidebar: boolean;
 }
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true} = Astro.props;
+
+const primaryColor = PRIMARY_COLOR;
+const secondaryColor = SECONDARY_COLOR;
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <BaseHead title={title} description={description} />
   </head>
   <body>
     <div class="main-layout">
       <div class="sidebar">
-        {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+        {includeSidebar && <SideBar />}
       </div>
       <div class="main-page">
         <div class="main-content">
@@ -43,7 +44,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
   </body>
 </html>
 
-<style>
+<style define:vars={{ primaryColor, secondaryColor }}>
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +54,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
 }
 
 body {
-    background-color: #191c1e;
+    background-color: var(--primaryColor);
 }
 
 .main-layout {
@@ -68,24 +69,25 @@ body {
 .sidebar {
   width: 300px;
   height: 100%;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 20px;
-  background-color: #191c1e;
+  background-color: var(--secondaryColor);
   color: #ede8e6;
   position: fixed;
 }
 
 .main-page {
     flex-grow: auto;
-    margin: 40px 0 0 300px;
+    margin: 0px 0 0 300px;
     width: 100%;
     height: 100vh;
     padding: 0 40px;
     /* overflow-y: scroll; */
-    background-color: #1d2023;
+    background-color: var(--primaryColor);
 }
 
 .main-content {
+  margin-top: 40px;
   padding-top: 40px; 40px;
   font-family: system-ui;
   color: #ede8e6;
