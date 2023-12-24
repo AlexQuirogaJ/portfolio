@@ -1,35 +1,14 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
+const allPosts = await Astro.glob("../pages/projects/*.md");
+
 ---
 
 <div>
-  <ProjectCard
-    title="Demo Project 1"
-    img="/files/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-
-  <ProjectCard
-    title="Demo Project 2"
-    img="/files/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-
-  <ProjectCard
-    title="Demo Project 3"
-    img="/files/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <ProjectCard
-    title="Demo Project 4"
-    img="/files/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+	<section class="projects">
+		{allPosts.map(post =>
+			<ProjectCard post={post}>
+			</ProjectCard>
+			)}
+	</section>
 </div>

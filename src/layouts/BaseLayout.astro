@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION, PRIMARY_COLOR, SECONDARY_COLOR } from "../config";
 import BaseHead from "../components/BaseHead.astro";
+import Mobilebar from "../components/Mobilebar.astro";
 
 interface Props {
   title?: string;
@@ -27,6 +28,9 @@ const secondaryColor = SECONDARY_COLOR;
     <div class="main-layout">
       <div class="sidebar">
         {includeSidebar && <SideBar />}
+      </div>
+      <div class="mobile-bar">
+        {<Mobilebar />}
       </div>
       <div class="main-page">
         <div class="main-content">
@@ -55,6 +59,10 @@ const secondaryColor = SECONDARY_COLOR;
 
 body {
     background-color: var(--primaryColor);
+}
+
+.mobile-bar {
+  display: none;
 }
 
 .main-layout {
@@ -99,6 +107,24 @@ body {
 .footer {
   margin-top: auto;
   margin-bottom: 100px;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .main-page {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+  }
+  .mobile-bar {
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 100;
+  }
 }
 
 </style>

@@ -1,4 +1,8 @@
 ---
+import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
+
+const primaryColor = PRIMARY_COLOR;
+const terciaryColor = TERTIARY_COLOR;
 ---
 <div>
     <ul>
@@ -13,7 +17,7 @@
     </ul>
 </div>
 
-<style>
+<style define:vars={{ primaryColor, terciaryColor }}>
 
 div {
     display: block;
@@ -32,6 +36,14 @@ ul {
 
 ul li {
     margin: 15px 0;
+}
+
+ul li a:hover {
+    background-color: var(--primaryColor);
+    opacity: 0.8;
+    color: white;
+    border-radius: 10px;
+    border-style: solid;
 }
 
 ul li a {

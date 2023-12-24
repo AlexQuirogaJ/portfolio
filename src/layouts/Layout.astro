@@ -1,51 +1,100 @@
 ---
-interface Props {
-	title: string;
-}
+import { ViewTransitions } from 'astro:transitions'
+import Footer from "../components/Footer.astro"
 
-const { title } = Astro.props;
+import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
+
+const primaryColor = PRIMARY_COLOR;
+const secondaryColor = SECONDARY_COLOR;
+const tertiaryColor = TERTIARY_COLOR;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<body>
-		<slot />
+	<body class="project-body">
+		<div class="return">
+			<a href="/#projects">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10 22L0 12L10 2l1.775 1.775L3.55 12l8.225 8.225z"/></svg>
+				<p>Projects</p>
+			</a>
+		</div>
+		
+		<main transition:animate="fade">
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+<style define:vars={{ primaryColor, secondaryColor, tertiaryColor }}>
+
+	.project-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: var(--tertiaryColor);
+		font-family: system-ui;
+		color: white;
+		min-height: 100vh;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+
+	main {
+		flex: 1;
+		margin: 0 auto;
+		max-width: 800px;
+		width: 100%;
+		padding: 24px 16px 64px 16px;
+		box-sizing: border-box;
 	}
+
 	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		color: var(--primaryColor);
+		padding: 14px 16px;
+		border-radius: 5px;
 	}
+
+	.return {
+		position: fixed;
+		top: 30px;
+		left: 30px;
+		padding: 16px;
+		text-decoration: none;
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px;
+		padding: 5px 15px 5px 15px;
+		border-color: white;
+		background-color: var(--primaryColor);
+	}
+
+	.return a {
+		color: white;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+	}
+
+	.return svg {
+		height: 20px;
+		
+	}
+
+	.return p {
+		align-content: center;
+	}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+	.return {
+		top: 10px;
+		left: 10px;
+		z-index: 1000;
+	}
+
+	main {
+		margin-top: 60px;
+	}
+}
 </style>

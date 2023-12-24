@@ -11,6 +11,7 @@ export const SITE_DESCRIPTION = 'Aerospace Engineer, Software Developer, and Dat
 // COLORS blue tone
 export const PRIMARY_COLOR = '#122132';
 export const SECONDARY_COLOR = '#101627';
+export const TERTIARY_COLOR = '#1d212c';
 
 // Color tone Test
 // export const PRIMARY_COLOR = '#bad5fd';

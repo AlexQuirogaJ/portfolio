@@ -56,4 +56,8 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## Requirements
 ```bash
 npm install @astrojs/netlify
+npm install remark-math
+npm install rehype-katex
 ```
+
+- [How To Render LaTeX In Markdown With Astro.js](https://blog.alexafazio.dev/blog/render-latex-in-astro/)
