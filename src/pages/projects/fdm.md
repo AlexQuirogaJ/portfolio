@@ -50,12 +50,6 @@ DataFlash Logs acts as the front end of the script (facade pattern) and parses t
 ### 1.4. FlightDynamicModel Module
 Contains the FlightDynamicsModel class which instance a DataFlashLogs object and define methods for parsing and preparing data for training. It also implement methods to create the keras model, training and testing as well as plotting history. All parameters for datasets, model and training are set as attributes.
 
-mkggk $\pi$ njnfngn
-
-$$
-\pi = \frac{c}{d}
-$$
-
 ## 2. Frontend
 
 - PySide6
