@@ -24,6 +24,11 @@ const {post} = Astro.props;
 </div>
 
 <style>
+
+* {
+  text-decoration: none;
+}
+
 .project-card:hover{
   opacity: 0.95;
   transition: 0.3s;
@@ -42,8 +47,8 @@ const {post} = Astro.props;
   object-fit: cover;
   height: auto;
   border-radius: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   margin-left: 0px;
   margin-right: 20px;
   border-style: solid;
@@ -53,11 +58,11 @@ const {post} = Astro.props;
 .text-div {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .text-div h1 {
-  font-size: 14pt;
+  font-size: 16pt;
   margin-bottom: 0px;
 }
 
@@ -67,7 +72,7 @@ const {post} = Astro.props;
 }
 
 /* For mobile devices */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 900px) {
   .card-div {
     flex-direction: column;
   }
@@ -76,6 +81,7 @@ const {post} = Astro.props;
     width: 95%;
     height: auto;
     order: 2;
+    margin-top: 0px;
   }
 
 }

@@ -1,12 +1,12 @@
 ---
-import Layout from "./Layout.astro"
+import BaseProjectLayout from "./BaseProjectLayout.astro"
 const { frontmatter } = Astro.props 
 ---
-<Layout title={frontmatter.title} description="Project" image={frontmatter.cover}>
+<BaseProjectLayout title={frontmatter.title} description="Project">
   <img class="cover" src={frontmatter.cover} alt="cover" height="400">
   <h1 class="title">{frontmatter.title}</h1>
   <slot />
-</Layout>
+</BaseProjectLayout>
 
 <style>
   .cover {
