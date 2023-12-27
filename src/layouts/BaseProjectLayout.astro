@@ -3,11 +3,11 @@ import { ViewTransitions } from 'astro:transitions'
 import Footer from "../components/Footer.astro"
 import BaseHead from "../components/BaseHead.astro"
 
-import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
+// import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
 
-const primaryColor = PRIMARY_COLOR;
-const secondaryColor = SECONDARY_COLOR;
-const tertiaryColor = TERTIARY_COLOR;
+// const primaryColor = PRIMARY_COLOR;
+// const secondaryColor = SECONDARY_COLOR;
+// const tertiaryColor = TERTIARY_COLOR;
 
 
 interface Props {
@@ -38,13 +38,24 @@ const { title, description } = Astro.props;
 		<Footer />
 	</body>
 </html>
-<style define:vars={{ primaryColor, secondaryColor, tertiaryColor }}>
+<style is:global>
+
+:root {
+--primaryColor: rgb(10 10 10);
+--secondaryColor: rgb(10 10 10);
+--terciaryColor: rgb(10 10 10);
+--yellow-200: rgb(254 240 138);
+}
+
+</style>
+
+<style>
 
 	.project-body {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background-color: var(--tertiaryColor);
+		background-color: var(--primaryColor);
 		font-family: system-ui;
 		color: white;
 		min-height: 100vh;
@@ -79,6 +90,10 @@ const { title, description } = Astro.props;
 		background-color: var(--primaryColor);
 	}
 
+	.return:hover {
+		border-color: var(--yellow-200);
+	}
+
 	.return a {
 		color: white;
 		text-decoration: none;
@@ -86,9 +101,12 @@ const { title, description } = Astro.props;
 		align-items: center;
 	}
 
+	.return a:hover {
+		color: var(--yellow-200);
+	}
+
 	.return svg {
 		height: 20px;
-		
 	}
 
 	.return p {

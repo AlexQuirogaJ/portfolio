@@ -18,8 +18,11 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
 
 <BaseLayout includeSidebar={true}>
   <div class="page">
-    <div class="title">Alex Quiroga <Badge>Student</Badge></div>
+    <div class="title">Alex Quiroga </div>
     <div class="subtitle">Aerospace Technical Engineer</div>
+    <div class="badges">
+    <Badge>Studying</Badge> <Badge>Researching projects</Badge>
+    </div>
     <div class="resume">
       <text>
         Aeronautical engineering <strong>master's student</strong> at the Technical University
@@ -108,20 +111,30 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
 <style>
 
 .title {
-  font-size: 30pt;
+  font-size: 35pt;
   font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: row;
 }
 
+.badges {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+}
+
 strong {
-  color: white;
+  color: var(--yellow-200);
+  opacity: 0.92;
 }
 
 .subtitle {
   font-size: 20pt;
   font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .resume {
@@ -148,6 +161,15 @@ strong {
   align-items: center;
   flex-direction: row;
   gap: 20px;
+}
+
+For mobile devices
+@media only screen and (max-width: 800px) {
+  .title {
+    flex-direction: column;
+    margin-left: 0%;
+  }
+
 }
 	
 </style>

@@ -1,17 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "../config";
-
 import EducationIcon from "./icons/EducationIcon.astro";
 import ExperienceIcon from "./icons/ExperienceIcon.astro";
 import SkillsIcon from "./icons/SkillsIcon.astro";
 import ProjectsIcon from "./icons/ProjectsIcon.astro";
 import CVIcon from "./icons/CVIcon.astro";
 import ContactIcon from "./icons/ContactIcon.astro";
-
-const primaryColor = PRIMARY_COLOR;
-const secondaryColor = SECONDARY_COLOR;
 ---
 
 <div class="topbar-column">
@@ -45,7 +40,7 @@ const secondaryColor = SECONDARY_COLOR;
     </div>
 </div>
 
-<style define:vars={{ primaryColor, secondaryColor }}>
+<style>
 
 * {
     background-color: var(--secondaryColor);
@@ -108,6 +103,7 @@ ul li a {
 ul li a:hover {
     background-color: var(--primaryColor);
     opacity: 0.8;
+    color: var(--yellow-200);
 }
 
 .profile, .topbar-menu {
