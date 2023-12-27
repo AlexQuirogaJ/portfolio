@@ -1,0 +1,30 @@
+<span class="combined-style">
+    <slot />
+</span>
+
+<style>
+
+span {
+    margin-top: 7px;
+}
+
+.combined-style {
+  background-color: #ebf8ff; /* Color de fondo azul */
+  color: #0f2777; /* Color de texto azul oscuro */
+  font-size: 1rem; /* Tamaño de fuente pequeño */
+  font-weight: 550; /* Grosor de fuente medio */
+  margin-right: 0.5rem; /* Margen derecho de 0.5rem */
+  padding-left: 0.625rem; /* Relleno izquierdo de 0.625rem */
+  padding-right: 0.625rem; /* Relleno derecho de 0.625rem */
+  padding-top: 0.18rem; /* Relleno superior de 0.125rem */
+  padding-bottom: 0.18rem; /* Relleno inferior de 0.125rem */
+  border-radius: 0.25rem; /* Radio de borde de 0.25rem */
+  margin-left: 1rem; /* Margen izquierdo de 0.5rem */
+}
+
+/* Estilo para tema oscuro */
+.dark .combined-style {
+  background-color: #1e3a8a; /* Color de fondo oscuro para tema oscuro */
+  color: #a5b4fc; /* Color de texto para tema oscuro */
+}
+</style>

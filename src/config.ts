@@ -9,9 +9,14 @@ export const SITE_DESCRIPTION = 'Aerospace Engineer, Software Developer, and Dat
 // export const SECONDARY_COLOR = '#191c1e';
 
 // COLORS blue tone
-export const PRIMARY_COLOR = '#122132';
-export const SECONDARY_COLOR = '#101627';
-export const TERTIARY_COLOR = '#1d212c';
+// export const PRIMARY_COLOR = '#122132';
+// export const SECONDARY_COLOR = '#101627';
+// export const TERTIARY_COLOR = '#1d212c';
+
+// COLORS black tone
+export const PRIMARY_COLOR = 'rgb(10 10 10)'; // bg-slate-900
+export const SECONDARY_COLOR = 'rgb(10 10 10)';
+export const TERTIARY_COLOR = 'rgb(10 10 10)';
 
 // Color tone Test
 // export const PRIMARY_COLOR = '#bad5fd';
