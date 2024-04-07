@@ -68,6 +68,12 @@ npm install remark-math
 npm install rehype-katex
 ```
 
+### Update packages
+
+```bash
+npm update
+```
+
 ### Run locally and deploy to Netlify
 ```bash
 npm run dev # Run locally
