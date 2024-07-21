@@ -1,13 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import SideBarFooter from "./SideBarFooter.astro";
 import SideBarMenu from "./SideBarMenu.astro";
-import { Image } from "astro:assets";
 ---
 
 <div class="sidebar-column">
     <div class="profile">
       <a href="/">
-        <Image class="profile-photo" format="webp" width={300} height={300} src="/profile_4.png" alt="Profile image" />
+        <Image class="profile-photo" format="webp" width={300} height={300} src="/profile.jpg" alt="Profile image" />
       </a>
     </div>
     <div class="sidebar-menu">
@@ -40,7 +40,7 @@ import { Image } from "astro:assets";
 
 .profile, .sidebar-menu, .footer {
   display: block;
-  background-color: var(--secondaryColor);
+  /* background-color: var(--secondaryColor); */
 }
 
 .sidebar-menu {
@@ -55,6 +55,13 @@ import { Image } from "astro:assets";
 .footer {
   margin-top: auto;
   margin-bottom: 40px;
+}
+
+/* Tablets */
+@media only screen and (max-width: 1200px) {
+  .profile-photo {
+    width: 120px;
+  }
 }
 
 </style>

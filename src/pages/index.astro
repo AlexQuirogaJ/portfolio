@@ -1,27 +1,34 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import EducationCard from "../components/EducationCard.astro"; 
-import ExperienceCard from "../components/ExperienceCard.astro";
-import Skills from "../components/Skills.astro";
-import Projects from "../components/Projects.astro";
+import { Image } from "astro:assets";
+
+import Badge from "../components/Badge.astro";
 import CV from "../components/CV.astro";
 import ContactForm from "../components/ContactForm.astro";
-import Badge from "../components/Badge.astro";
+import EducationCard from "../components/EducationCard.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import EducationIcon from "../components/icons/EducationIcon.astro";
-import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
-import SkillsIcon from "../components/icons/SkillsIcon.astro";
-import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
 import CVIcon from "../components/icons/CVIcon.astro";
 import ContactIcon from "../components/icons/ContactIcon.astro";
+import EducationIcon from "../components/icons/EducationIcon.astro";
+import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
+import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
+import SkillsIcon from "../components/icons/SkillsIcon.astro";
+
+import UPMIcon from "../components/icons/Logos/UPMIcon.astro";
+
+
+let iconSize: string = "32";
 ---
 
 <BaseLayout includeSidebar={true}>
   <div class="page">
-    <div class="title">Alex Quiroga </div>
+    <div class="title-page">Alex Quiroga </div>
     <div class="subtitle">Aerospace Technical Engineer</div>
     <div class="badges">
-    <Badge>Studying</Badge> <Badge>Researching projects</Badge>
+    <Badge>Studying</Badge> <Badge>Projects</Badge>
     </div>
     <div class="resume">
       <text>
@@ -34,71 +41,77 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
 
   </div>
 
-  <div class="education" id="education">
+  <div class="section" id="education">
     <div class="title">
-      <EducationIcon size="32"/>
+      <EducationIcon size={iconSize}/>
       <h1> Education</h1> 
     </div>
     <EducationCard
-      date="2022 - Today"
+      date="Today"
       title="Master’s degree in Aeronautical Engineering"
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aircraft Specialization"
-    />
+      >
+      <UPMIcon slot="svg" size="25" />
+    </EducationCard>
 
     <EducationCard
-      date="2017 - 2023"
+      date="2023"
       title="Bachelor’s degree in Aerospace Engineering"
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aerospace Sciences and Technologies"
-    />
-
+      >
+      <UPMIcon slot="svg" size="25" />
+    </EducationCard>
   </div>
 
-  <div class="experience" id="experience">
+  <div class="section" id="experience">
     <div class="title">
-      <ExperienceIcon size="32"/>
+      <ExperienceIcon size={iconSize}/>
       <h1> Work Experience</h1> 
     </div>
     
     <ExperienceCard
-      date="Mar 2021 - Aug 2021"
+      date="March 2021"
       title="Intership"
       company="SRM Consulting"
-      description="Part of the development team in charge of the platform's backend. Implementation of artificial intelligence algorithms with Python for cartographic analysis and volume rendering from photographs obtained by drones."
-    />
+      description="Research on Machine Learning alternatives to conventional photogrammetry. Developed a desktop application with PySide for training and validation. Explored Docker for deployment and FastAPI for RESTful API."
+    >
+      <!-- <Image src="/profile.jpg" alt="SRM" /> -->
+      <Image slot="logo" format="webp" width={25} height={25} src="/logos/srm.png" alt="Profile image" />
+    </ExperienceCard>
 
   </div>
 
-  <div class="skills" id="skills">
+  <div class="section" id="projects">
     <div class="title">
-      <SkillsIcon size="32"/>
+      <ProjectsIcon size={iconSize}/>
+      <h1>Projects </h1> 
+    </div>
+    <Projects />
+  </div>
+
+  <div class="section" id="skills">
+    <div class="title">
+      <SkillsIcon size={iconSize}/>
       <h1>Skills </h1> 
     </div>
 
     <Skills />
   </div>
 
-  <div class="projects" id="projects">
+  <div class="section" id="cv">
     <div class="title">
-      <ProjectsIcon size="32"/>
-      <h1>Projects </h1> 
-    </div>
-    <Projects />
-  </div>
-
-  <div class="cv" id="cv">
-    <div class="title">
-      <CVIcon size="32"/>
-      <h1>CV </h1> 
+      <CVIcon size={iconSize}/>
+      <h1>Curriculum Vitae </h1> 
     </div>
     <CV />
 
   </div>
 
-  <div class="contact" id="contact">
+  <div class="section" id="contact">
     <div class="title">
-      <ContactIcon size="32"/>
+      <ContactIcon size={iconSize}/>
       <h1>Contact </h1> 
     </div>
 
@@ -110,7 +123,8 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
 
 <style>
 
-.title {
+/* Title and resume */
+.title-page {
   font-size: 35pt;
   font-weight: 600;
   display: flex;
@@ -118,11 +132,14 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
   flex-direction: row;
 }
 
+.title {
+  margin-bottom: 14px;
+}
+
 .badges {
   display: flex;
   flex-direction: row;
   gap: 20px;
-
 }
 
 strong {
@@ -143,7 +160,9 @@ strong {
   margin-top: 20px;
 }
 
-.education .experience, .projects .skills, .cv .contact{
+/* Sections */
+
+.section {
   margin-top: 20px;
 }
 
@@ -151,25 +170,23 @@ strong {
   scroll-margin-top: 100px;
 }
 
-.education h1, .experience h1, .projects h1, .skills h1, .cv h1, .contact h1 {
+.section h1 {
   font-size: 25pt;
   font-weight: 600;
 }
 
-.education .title, .experience .title, .projects .title, .skills .title, .cv .title, .contact .title {
+.section .title {
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 20px;
 }
 
-For mobile devices
-@media only screen and (max-width: 800px) {
-  .title {
+/* For mobile devices */
+/* @media only screen and (max-width: 800px) {
+  .title-page {
     flex-direction: column;
     margin-left: 0%;
-  }
-
-}
+  } */
 	
 </style>

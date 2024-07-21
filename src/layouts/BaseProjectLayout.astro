@@ -1,7 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
-import Footer from "../components/Footer.astro"
 import BaseHead from "../components/BaseHead.astro"
+import Footer from "../components/Footer.astro"
 
 // import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
 
@@ -24,7 +24,8 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<ViewTransitions />
 	</head>
-	<body class="project-body">
+	<body class="project-body relative">
+		<div class="absolute z-[-2] h-full w-full bg-slate-950"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div></div>
 		<div class="return">
 			<a href="/#projects">
 				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10 22L0 12L10 2l1.775 1.775L3.55 12l8.225 8.225z"/></svg>
@@ -55,7 +56,7 @@ const { title, description } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background-color: var(--primaryColor);
+		/* background-color: var(--primaryColor); */
 		font-family: system-ui;
 		color: white;
 		min-height: 100vh;
@@ -87,7 +88,7 @@ const { title, description } = Astro.props;
 		border-width: 2px;
 		padding: 5px 15px 5px 15px;
 		border-color: white;
-		background-color: var(--primaryColor);
+		/* background-color: var(--primaryColor); */
 	}
 
 	.return:hover {
