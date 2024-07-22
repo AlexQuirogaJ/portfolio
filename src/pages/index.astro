@@ -17,9 +17,6 @@ import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
 import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
 import SkillsIcon from "../components/icons/SkillsIcon.astro";
 
-import UPMIcon from "../components/icons/Logos/UPMIcon.astro";
-
-
 let iconSize: string = "32";
 ---
 
@@ -52,7 +49,7 @@ let iconSize: string = "32";
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aircraft Specialization"
       >
-      <UPMIcon slot="svg" size="25" />
+      <Image slot="logo" format="webp" width={25} height={25} src="/logos/upm.png" alt="UPM" />
     </EducationCard>
 
     <EducationCard
@@ -61,7 +58,7 @@ let iconSize: string = "32";
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aerospace Sciences and Technologies"
       >
-      <UPMIcon slot="svg" size="25" />
+      <Image slot="logo" format="webp" width={25} height={25} src="/logos/upm.png" alt="UPM" />
     </EducationCard>
   </div>
 
