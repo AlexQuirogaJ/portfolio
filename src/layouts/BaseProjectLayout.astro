@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions'
 import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
+import Prose from "../components/Prose.astro"
 
 // import { PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR } from "../config";
 
@@ -34,7 +35,9 @@ const { title, description } = Astro.props;
 		</div>
 		
 		<main transition:animate="fade">
-			<slot />
+			<Prose>
+				<slot />
+			</Prose>
 		</main>
 		<Footer />
 	</body>
@@ -88,7 +91,7 @@ const { title, description } = Astro.props;
 		border-width: 2px;
 		padding: 5px 15px 5px 15px;
 		border-color: white;
-		/* background-color: var(--primaryColor); */
+		background-color: black;
 	}
 
 	.return:hover {
@@ -126,4 +129,5 @@ const { title, description } = Astro.props;
 		margin-top: 60px;
 	}
 }
+
 </style>
