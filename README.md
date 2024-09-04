@@ -64,6 +64,7 @@ All commands are run from the root of the project, from a terminal:
 
 ```bash
 npm install @astrojs/netlify
+npm install @astrojs/cloudflare
 npm install remark-math
 npm install rehype-katex
 ```

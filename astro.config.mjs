@@ -1,16 +1,12 @@
-import netlify from '@astrojs/netlify';
+import cloudflare from "@astrojs/cloudflare";
+import tailwind from "@astrojs/tailwind";
 import { defineConfig } from 'astro/config';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
-// 
-// https://astro.build/config
-//export default defineConfig({});
-
 // DEPLOYMENT CONFIGURATION
-import tailwind from "@astrojs/tailwind";
 export default defineConfig({
-  adapter: netlify(),
+  adapter: cloudflare(),
   output: 'hybrid',
   markdown: {
     remarkPlugins: [remarkMath],
