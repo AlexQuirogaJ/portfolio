@@ -2,7 +2,7 @@
 
 ## Page
 
-This site is available at [Portfolio Web Page](https://alex-quiroga-portfolio.netlify.app/).
+This site is available at [Portfolio Web Page](https://alex-quiroga.com/).
 
 > [!NOTE]
 > The development of this page is still in progress.
@@ -63,8 +63,8 @@ All commands are run from the root of the project, from a terminal:
 > - [How To Render LaTeX In Markdown With Astro.js](https://blog.alexafazio.dev/blog/render-latex-in-astro/)
 
 ```bash
-npm install @astrojs/netlify
 npm install @astrojs/cloudflare
+npm install @astrojs/tailwind
 npm install remark-math
 npm install rehype-katex
 ```
@@ -75,7 +75,7 @@ npm install rehype-katex
 npm update
 ```
 
-### Run locally and deploy to Netlify
+### Run locally and check build for deployment
 ```bash
 npm run dev # Run locally
 npm run build # Build for production
