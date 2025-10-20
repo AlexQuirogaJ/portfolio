@@ -23,16 +23,16 @@ let iconSize: string = "32";
 <BaseLayout includeSidebar={true}>
   <div class="page">
     <div class="title-page">Alex Quiroga </div>
-    <div class="subtitle">Aerospace Technical Engineer</div>
+    <div class="subtitle">MSc Aerospace Engineer and Data Scientist</div>
     <div class="badges">
     <Badge>Studying</Badge> <Badge>Projects</Badge>
     </div>
     <div class="resume">
       <text>
-        Aeronautical engineering <strong>master's student</strong> at the Technical University
-        of Madrid. Have obtained <strong>code development experience</strong> in future technologies
+        MSc in Aerospace Engineering with a strong background in data science. Interested in ML applications, computer vision, NLP, reinforcement learning, and robotics.
+        Have obtained <strong>code development experience</strong> in future technologies
         by mean of internships and personal projects. Currently looking for further
-        deepening in <strong>data science</strong> applied to <strong>aerospace</strong> and medical industries.
+        deepening in <strong>data science</strong>.
       </text>
     </div>
 
@@ -44,7 +44,7 @@ let iconSize: string = "32";
       <h1> Education</h1> 
     </div>
     <EducationCard
-      date="Today"
+      date="Jun 2025"
       title="Expert in Artificial Intelligence for Aerospace Engineering"
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Postgraduate course"
@@ -53,7 +53,7 @@ let iconSize: string = "32";
     </EducationCard>
 
     <EducationCard
-      date="Today"
+      date="Jul 2025"
       title="Master’s degree in Aeronautical Engineering"
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aircraft Specialization"
@@ -62,7 +62,7 @@ let iconSize: string = "32";
     </EducationCard>
 
     <EducationCard
-      date="2023"
+      date="Jul 2023"
       title="Bachelor’s degree in Aerospace Engineering"
       institution="ETSIAE, Technical University of Madrid, Madrid (Spain)"
       description="Aerospace Sciences and Technologies"
@@ -78,12 +78,20 @@ let iconSize: string = "32";
     </div>
 
     <ExperienceCard
+      date="Apr 2025"
+      title="Data Science Intern"
+      company="Kerox Technology"
+      description="Research on SNOMED postcoordination using LLMs."
+    >
+      <Image slot="logo" format="webp" width={25} height={25} src="/logos/kerox.png" alt="Profile image" />
+    </ExperienceCard>
+
+    <ExperienceCard
       date="Oct 2024"
       title="Intership"
       company="DMAIA UPM"
       description="Analysis, filtering and time-domain feature extraction from ECGs. Implemented Arrhythmia classification with scikit-learn, scipy and neurokit2."
     >
-      <!-- <Image src="/profile.jpg" alt="SRM" /> -->
       <Image slot="logo" format="webp" width={25} height={25} src="/logos/upm.png" alt="Profile image" />
     </ExperienceCard>
     
@@ -93,7 +101,6 @@ let iconSize: string = "32";
       company="SRM Consulting"
       description="Research on Machine Learning alternatives to conventional photogrammetry. Developed a desktop application with PySide for training and validation. Explored Docker for deployment and FastAPI for RESTful API."
     >
-      <!-- <Image src="/profile.jpg" alt="SRM" /> -->
       <Image slot="logo" format="webp" width={25} height={25} src="/logos/srm.png" alt="Profile image" />
     </ExperienceCard>
 

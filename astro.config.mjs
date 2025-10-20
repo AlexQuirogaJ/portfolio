@@ -7,7 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   adapter: cloudflare(),
-  output: 'hybrid',
+  output: 'static',
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex]

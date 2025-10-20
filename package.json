@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
-    "@astrojs/cloudflare": "^11.0.4",
+    "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.0.7",
+    "astro": "^5.14.5",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
     "sharp": "^0.32.6",
