@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: 'Reinforcement Learning for Flight Control Systems'
 cover: /images/projects/rl_fcs/front_photo.jpg
-description: 'Application of Reinforcement Learning techniques to Flight Control Systems.'
+description: 'Simulated aircraft dynamics using linearized equations and 4th-order Runge–Kutta integration to model flight behavior. Built a custom Gymnasium environment with waypoint-based rewards and control surface actions to test autonomous control, and trained a PPO agent with Stable-Baselines, achieving an autonomous flight system capable of accurately following predefined waypoints.'
 ---
 <style>
 	.caption {

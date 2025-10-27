@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: 'PID Ball Balance Robot'
 cover: /images/projects/pid_ball_balance/front_photo.jpg
-description: 'The controller uses distance measurements from infrared sensor and a servo motor as actuator. For user input/output integrates an LCD Display as well as multiples potentiometers, buttons and a switch.'
+description: 'Designed and built a self-balancing ball robot capable of stabilizing a ball on a tilting platform using a PID control system. The robot adjusts the platform’s angle via a servo motor based on distance readings from an infrared sensor. Integrated an LCD display, potentiometers, buttons, and a switch for real-time monitoring and user control, enabling interactive tuning and operation of the system.'
 ---
 <style>
 	.caption {

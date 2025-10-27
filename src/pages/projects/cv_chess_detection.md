@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: 'Computer Vision for real-time chess move detection'
 cover: /images/projects/cv_chess_detection/front_photo.jpg
-description: 'Application of Computer Vision techniques for detecting chess moves in real-time.'
+description: 'Engineered a real-time chess move detection system capable of reconstructing full games from video, even under low-light or low-quality conditions, by accurately identifying piece positions. Integrated and fine-tuned InceptionV3 (PyTorch) for square-level detection and YOLOv8 for full-board recognition, delivering a fully tested end-to-end solution for automated chess analysis.'
 ---
 
 <style>
